@@ -1,19 +1,256 @@
-<!doctype html>
-<html class="no-js" lang="">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Banco de Chile</title>
+	<meta name="description" content="Banco de Chile">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<!-- - - - - - - - - - - - - - - - - - CSS-->	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
+	<link rel="stylesheet" href="css/libs/normalize.min.css">
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
 
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/main.css">
+<body ng-app="appBuscar">
 
-	</head>
-	<body>
+<!-- .headerCard-->
+<header class="headerCard">
+	<div class="row">
+		<div class="innerHeader">
+			<a href="/" class="logo" title="Volver al Inicio"><img src="css/img/banco_de_chile.png" alt="Logo Banco de Chile" title="Logo Banco de Chile"></a>
 
-		<p>Hola Mundo</p>
+				<button class="c-hamburger c-hamburger--htx">
+					<span>toggle menu</span>
+				</button> 
 
-	</body>
+				<nav class="innerHeader__navPrincipal">
+					<ul>
+						<li><a href="#">Enlace Uno</a></li>
+						<li><a href="#">Enlace Dos</a></li>
+					</ul>
+				</nav>
+		</div>        
+	</div>
+</header><!-- /.headerCard-->
+
+
+<!-- Container -->
+<div class="container-fluid">
+	<!-- .seccDeatil-->
+	<secction>
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="titular">Titulo</h1>
+	        </div>
+	    </div>
+
+		<div class="row">
+		    <div class="col-md-12">
+
+				<div class="box boxContenedor">
+
+					<div class="panel-heading">
+						<h3>Detalles</h3>
+					</div>
+
+					<div class="panel-body">
+						<article>
+							<div class="col-md-4">
+								<div class="box--list">
+									<h4>Banco de Chile</h4>
+										<ul>
+											<li><span><i class="fa fa-minus"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+											<li><span><i class="fa fa-minus"></i></span> a vel obcaecati minus non ullam excepturi, nulla porro aliquam possimus, voluptatibus! Quaerat odio, sunt ducimus asperiores explicabo quasi!</li>
+											<li><span><i class="fa fa-minus"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci repellendus molestiae.</li>
+											<li><span><i class="fa fa-minus"></i></span> a vel obcaecati minus non ullam excepturi, nulla porro aliquam possimus, voluptatibus! Quaerat odio, sunt ducimus asperiores explicabo quasi!</li>
+										</ul>
+								</div>
+							</div>
+						</article>	
+						
+						<article>
+							<div class="col-md-8">
+								<div class="box-detail">
+									<div class="box--cont--detail">
+										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
+									</div>
+
+									<div class="box--cont--detail">
+										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
+									</div>
+
+									<div class="box--cont--detail">
+										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
+									</div>
+								</div>
+							</div>  
+						</article>
+					</div>   
+
+				</div>
+
+		    </div>
+		</div>
+	</secction><!-- /.seccDeatil-->
+
+	<!-- .seccController-->
+	<section>
+		<div ng-controller="ControladorFiltrar">
+
+			<article>
+				<div class="row">
+					<div class="col-md-12">
+		                
+						<div class="box boxContenedor">
+
+							<div class="panel-heading">
+								<h3>Total Items : {{personas.length}} </h3>
+								<span class="collapse-btn" data-toggle="collapse" data-target="#collapseAbrirCerrar" aria-expanded="false" aria-controls="collapseAbrirCerrar"><i class="fa fa-chevron-down"></i></span>
+							</div>
+
+							<!-- collapseAbrirCerrar -->
+		                    <div class="collapse" id="collapseAbrirCerrar">
+								<div class="panel-body">
+		                            <div class="row">
+		                            	<!-- col-sm-3-->
+		                                <div class='col-sm-3'>
+		                                    <div class="form-group">
+		                                        <div class='input-group date' id='datetimepicker1'>
+		                                            <input type='text' class="form-control" />
+		                                                <span class="input-group-addon">
+		                                                    <i class="fa fa-calendar"></i>
+		                                                </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            	<!-- col-sm-3-->
+		                                <div class='col-sm-3'>
+		                                    <div class="form-group">
+		                                        <div class='input-group date' id='datetimepicker1'>
+		                                            <input type='text' class="form-control" />
+		                                                <span class="input-group-addon">
+		                                                    <i class="fa fa-calendar"></i>
+		                                                </span>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            	<!-- col-sm-3-->
+										<div class='col-sm-3'>
+											<div class="form-group">
+												<select class="form-control">
+													<option>Seleccione</option>
+													<option >opcion a</option>
+													<option>opcion b</option>
+													<option>opcion c</option>
+													<option>opcion d</option>
+												</select>
+											</div>
+										</div>
+		                            </div><!-- /.row -->
+									
+									<div class="row">
+										<div class='col-md-6'>
+											<div class="form-group">
+												<form role="search">
+													<input ng-model="buscar" type="text" class="form-control" placeholder="Busqueda General">
+												</form>
+											</div>
+										</div>
+										<div class='col-md-4'>
+											<button type="submit" class="btn btn-buscar">Buscar</button>	
+										</div>
+										
+									</div>
+
+								</div><!-- /.panelBody -->
+		                    </div><!-- /.collapseAbrirCerrar -->
+
+						</div><!-- /.boxContenedor-->
+
+		            </div><!-- /.col-->
+		        </div><!-- /.row-->
+	        </article>
+
+
+			<article> 
+			    <div class="row">
+			        <div class="col-md-12">
+
+		                <table ng-init='configPages()' class="table table-condensed table-striped">
+		                    <thead class="table-heading">
+		                        <tr>
+		                          <th></th>
+		                          <th></th>
+		                          <th ng-click="filtrar('-nombre')">Nombre</th>
+		                          <!-- <th ng-click="filtrar('-fecha')">Fecha</th> -->
+		                          <th ng-click="filtrar('-detalle')">Detalle</th>
+		                          <th ng-click="filtrar('-saldo')">Saldo</th>
+		                        </tr>
+		                    </thead>
+
+		                    <tbody class="table-body">
+		                        <tr ng-repeat="persona in personas | orderBy:ordenar | filter:buscar | startFromGrid: paginaActual * tamPagina | limitTo: tamPagina">
+		                            <td class="width__check"><span><input type="checkbox"></span></td>
+		                            <td>{{$index}}</td>
+		                            <td>{{persona.nombre}}</td>
+		                            <td>{{persona.detalle}}</td>
+		                            <td>{{persona.saldo}}</td>
+		                        </tr>
+		                    </tbody>
+		                </table>
+
+						<!-- Paginador-->
+						<div class="row">
+							<div class="col-sm-3 col-xs-6 col-center">
+								<nav aria-label="Page navigation btn-group">
+									<ul class="pagination">
+										<li ng-disabled='paginaActual == 0' ng-click='paginaActual = paginaActual - 1'><span aria-hidden="true">&laquo;</span>
+										</li>
+									
+										<li ng-disabled='paginaActual == pagina.numero - 1' ng-click='paginador(pagina.numero)' ng-repeat='pagina in paginas'><span aria-hidden="true">{{pagina.numero}}</span></li>
+
+										<li ng-disabled='paginaActual >= usuarios.length/tamPagina - 1' , ng-click='paginaActual = paginaActual + 1'><span aria-hidden="true">&raquo;</span>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div><!-- /.Paginador-->  
+
+
+			        </div><!-- /.col-->
+			    </div><!-- /.row-->
+			</article>   
+
+		</div><!-- /.Controlador-->
+	</section>  
+
+
+</div><!-- /.Container -->
+
+<!-- Footer-->
+	<footer>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer_bottom">
+					<p>Banco de Chile Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti culpa architecto amet numquam eius, provident illum tempore praesentium, magnam dicta molestias modi quas hic debitis obcaecati reiciendis rem eos sunt? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat labore saepe ducimus dignissimos eveniet delectus alias vel officiis odio fuga quam rerum qui voluptate repellendus deserunt, quas. Molestias, maxime, eveniet.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+<!-- - - - - - - - - - - - - - - - - - SCRIPT-->
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/functions.js"></script>
+
+</body>
 </html>
