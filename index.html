@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="no-js" lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,7 +7,7 @@
 	<meta name="description" content="Banco de Chile">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-<!-- - - - - - - - - - - - - - - - - - CSS-->	
+	<!-- - - - - - - - - - - - - - - - - - CSS-->	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed">
 	<link rel="stylesheet" href="css/libs/normalize.min.css">
 	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
@@ -21,7 +21,7 @@
 <header class="headerCard">
 	<div class="row">
 		<div class="innerHeader">
-			<a href="/" class="logo" title="Volver al Inicio"><img src="css/img/banco_de_chile.png" alt="Logo Banco de Chile" title="Logo Banco de Chile"></a>
+			<a href="/" class="logo" title="Volver al Inicio"><img src="css/img/banco-de-chile.png" alt="Logo Banco de Chile" title="Logo Banco de Chile"></a>
 
 				<button class="c-hamburger c-hamburger--htx">
 					<span>toggle menu</span>
@@ -37,9 +37,8 @@
 	</div>
 </header><!-- /.headerCard-->
 
-
-<!-- Container -->
-<div class="container-fluid">
+<!-- Container Controller-->
+<div ng-controller="ControladorFiltrar" class="container-fluid">
 	<!-- .seccDeatil-->
 	<secction>
 	    <div class="row">
@@ -61,12 +60,9 @@
 						<article>
 							<div class="col-md-4">
 								<div class="box--list">
-									<h4>Banco de Chile</h4>
-										<ul>
-											<li><span><i class="fa fa-minus"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-											<li><span><i class="fa fa-minus"></i></span> a vel obcaecati minus non ullam excepturi, nulla porro aliquam possimus, voluptatibus! Quaerat odio, sunt ducimus asperiores explicabo quasi!</li>
-											<li><span><i class="fa fa-minus"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci repellendus molestiae.</li>
-											<li><span><i class="fa fa-minus"></i></span> a vel obcaecati minus non ullam excepturi, nulla porro aliquam possimus, voluptatibus! Quaerat odio, sunt ducimus asperiores explicabo quasi!</li>
+									<h4>Lorem ipsum dolor sit amet</h4>
+										<ul ng-repeat="lista in listas" >
+											<li><span><i class="fa fa-minus"></i></span>{{lista.listado}}</li>
 										</ul>
 								</div>
 							</div>
@@ -75,32 +71,23 @@
 						<article>
 							<div class="col-md-8">
 								<div class="box-detail">
-									<div class="box--cont--detail">
-										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
-									</div>
-
-									<div class="box--cont--detail">
-										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
-									</div>
-
-									<div class="box--cont--detail">
-										<p><i class="fa fa-circle"></i>Banco de Chile es el emisor de la tarjeta de crédito Travel Club.</p><span>$ 4.994949</span>
+									<div ng-repeat="gasto in gastos" class="box--cont--detail">
+										<p><i class="fa fa-circle"></i>{{gasto.titulo}}</p>
+										<span>{{gasto.saldo}}</span>
 									</div>
 								</div>
 							</div>  
 						</article>
-					</div>   
+					</div>  
 
 				</div>
 
 		    </div>
 		</div>
-	</secction><!-- /.seccDeatil-->
+	</secction><!-- /.seccDetail-->
 
-	<!-- .seccController-->
+	<!-- .seccTablas-->
 	<section>
-		<div ng-controller="ControladorFiltrar">
-
 			<article>
 				<div class="row">
 					<div class="col-md-12">
@@ -143,10 +130,7 @@
 											<div class="form-group">
 												<select class="form-control">
 													<option>Seleccione</option>
-													<option >opcion a</option>
-													<option>opcion b</option>
-													<option>opcion c</option>
-													<option>opcion d</option>
+													<option ng-repeat="persona in personas">{{persona.total}}</option>
 												</select>
 											</div>
 										</div>
@@ -198,7 +182,7 @@
 		                            <td>{{$index}}</td>
 		                            <td>{{persona.nombre}}</td>
 		                            <td>{{persona.detalle}}</td>
-		                            <td>{{persona.saldo}}</td>
+		                            <td>{{persona.total}}</td>
 		                        </tr>
 		                    </tbody>
 		                </table>
@@ -220,16 +204,12 @@
 							</div>
 						</div><!-- /.Paginador-->  
 
-
 			        </div><!-- /.col-->
 			    </div><!-- /.row-->
 			</article>   
-
-		</div><!-- /.Controlador-->
 	</section>  
 
-
-</div><!-- /.Container -->
+</div><!-- /.Container Controlador-->
 
 <!-- Footer-->
 	<footer>
